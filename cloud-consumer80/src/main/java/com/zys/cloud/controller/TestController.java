@@ -1,18 +1,21 @@
 package com.zys.cloud.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.zys.cloud.service.UserServiceClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
-public class UserController {
+@RequestMapping("/consumer")
+public class TestController {
 
-    @Value("${server.port}")
-    private String port;
+    @Resource
+    private UserServiceClient userServiceClient;
 
-    @GetMapping("/user/get")
+    @GetMapping("/get")
     public String get() {
-        return "我是服务提供者，端口：" + port;
+        return userServiceClient.get();
     }
 }
