@@ -12,6 +12,7 @@
         <module>cloud-provider8001</module>
         <module>cloud-gateway9527</module>
         <module>cloud-consumer80</module>
+        <module>cloud-provider8002</module>
     </modules>
 
     <properties>
