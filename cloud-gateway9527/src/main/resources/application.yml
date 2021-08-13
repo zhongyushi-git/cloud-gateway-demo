@@ -27,6 +27,15 @@ spring:
           uri: lb://cloud-consul-consumer
           predicates:
               - Path=/consumer/**
+      #跨域配置
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+
 
 management:
   endpoints:
